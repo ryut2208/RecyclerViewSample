@@ -14,11 +14,13 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         recycler_view.layoutManager = layoutManager
+
         val sampleList = mutableListOf<String>()
         for (i in 0..10) {
             sampleList.add(i.toString())
         }
-        val adapter = RecyclerViewAdapter(this, sampleList)
+        val adapter = RecyclerViewAdapter(sampleList)
+
         recycler_view.adapter = adapter
         recycler_view.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
